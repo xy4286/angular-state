@@ -10,18 +10,18 @@ const { prop } = R;
   styleUrls: []
 })
 export class PageOneComponent implements OnInit {
-  count = 0;
+  //count = 0;
   firstName = '';
 
-  constructor(private myService: StateManagementService) {
+  constructor(public myService: StateManagementService) {
   }
 
   ngOnInit() {
-    this.myService.appState$.subscribe(val => {
-      console.log('state: ', val);
-      this.count = prop('count')(val);
-      console.log('after setting: ', this.count);
-    });
+    // this.myService.appState$.subscribe(val => {
+    //   console.log('in counter sub, state: ', val);
+    //   this.count = prop('count')(val);
+    //   //console.log('after setting: ', this.count);
+    // });
   }
 
   add = () => this.myService.add();

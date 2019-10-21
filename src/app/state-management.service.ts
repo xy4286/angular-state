@@ -53,23 +53,74 @@ export class StateManagementService {
 
 
 
-  appState$ = merge(
-    this.init$,
-    this.add$,
-    this.minus$,
-    this.first$,
-    this.last$
-  ).pipe(
-    // @ts-ignore
-    scan((acc, c) => c(acc), {count: 0})
-  );
+  // appState$ = merge(
+  //   this.init$,
+  //   this.add$,
+  //   this.minus$,
+  //   this.first$,
+  //   this.last$
+  // ).pipe(
+  //   // @ts-ignore
+  //   scan((acc, c) => c(acc), {count: 0})
+  // );
+  //
+  // appState$.subscribe(val => this.appState = val)
 
 
 
+  //appState$;
 
 
+  // constructor() {
+  //   this.appState$ = merge(
+  //     this.init$,
+  //     this.add$,
+  //     this.minus$,
+  //     this.first$,
+  //     this.last$
+  //   ).pipe(
+  //     // @ts-ignore
+  //     scan((acc, c) => c(acc), {count: 0})
+  //   );
+  //
+  // }
 
-  constructor() { }
+  public appState;
+
+  //constructor() {
+    // this.appState$ = merge(
+    //   this.init$,
+    //   this.add$,
+    //   this.minus$,
+    //   this.first$,
+    //   this.last$
+    // ).pipe(
+    //   // @ts-ignore
+    //   scan((acc, c) => {
+    //     console.log('acc: ', acc);
+    //     // @ts-ignore
+    //     return c(acc);
+    //   }, {count: 0})
+    // );
+
+  //}
+
+  constructor() {
+    merge(
+      this.init$,
+      this.add$,
+      this.minus$,
+      this.first$,
+      this.last$
+    ).pipe(
+      // @ts-ignore
+      scan((acc, c) => c(acc), {count: 0})
+    ).subscribe(val => {
+      this.appState = val;
+      console.log('this.appState: ', this.appState);
+    });
+  }
+
 
   public sendData(data) {
     console.log('reach rxjs: ', data);

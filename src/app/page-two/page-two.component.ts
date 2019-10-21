@@ -17,10 +17,10 @@ export class PageTwoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.myService.appState$.subscribe(val => {
-      console.log('state: ', val);
-      this.count = prop('count')(val);
-    });
+    // this.myService.appState$.subscribe(val => {
+    //   console.log('state: ', val);
+    //   this.count = prop('count')(val);
+    // });
   }
 
   //add = () => this.myService.add();
