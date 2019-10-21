@@ -1,0 +1,16 @@
+<div class="uk-grid-collapse uk-child-width-expand@s uk-text-center uk-margin-large-top" uk-grid>
+  <div></div>
+  <div>
+    <div class="uk-margin">
+      <p>Count: {{count}}</p>
+      <button style="margin-right: 2px" class="uk-button uk-button-primary" (click)="add()">+</button>
+      <button style="margin-left: 2px;" class="uk-button uk-button-danger" (click)="minus()">-</button>
+    </div>
+    <span class="uk-margin">
+      <p>First Name: {{firstName}}</p>
+      <input style="margin-bottom: 20px" type="text" class="uk-input"  [(ngModel)]="firstName"  />
+      <button class="uk-button uk-button-primary" (click)="submit()">submit</button>
+    </span>
+  </div>
+  <div></div>
+</div>

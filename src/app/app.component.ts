@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+import { PageOneComponent} from './page-one/page-one.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: []
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'this is root page';
 }
